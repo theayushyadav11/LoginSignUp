@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -66,7 +67,9 @@ class MainActivity : AppCompatActivity(), TodoAdapter.onItemClickListener {
 
 
 
+
     }
+
     private fun init() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -75,7 +78,9 @@ class MainActivity : AppCompatActivity(), TodoAdapter.onItemClickListener {
         todoRecyclerView.layoutManager=LinearLayoutManager(this)
         todoAdapter= TodoAdapter(list,this)
         todoRecyclerView.adapter=todoAdapter
-        binding.tvHeading.text = firebaseAuth.currentUser?.displayName
+        val sharedPreferences = getSharedPreferences("tt", Context.MODE_PRIVATE)
+        val n= firebaseAuth.currentUser?.displayName
+            binding.tvHeading.text ="Hi, "+sharedPreferences.getString("name",n)?.uppercase()
 
     }
     private fun listeners(){
@@ -110,6 +115,7 @@ class MainActivity : AppCompatActivity(), TodoAdapter.onItemClickListener {
             }
         })
     }
+
     private fun addTodo()
     {
         val todo = binding.etTodo.text.toString().trim()

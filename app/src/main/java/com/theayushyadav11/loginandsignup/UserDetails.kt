@@ -2,7 +2,9 @@ package com.theayushyadav11.loginandsignup
 
 import android.app.Dialog
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
@@ -51,8 +53,13 @@ class UserDetails : AppCompatActivity() {
     private fun fetchDetails() {
         databaseReference.child("name").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.value!=null)
-             binding.textView.text = snapshot.value.toString()
+                if(snapshot.value!=null) {
+                    binding.textView.text = snapshot.value.toString()
+                    val sharedPreferences = getSharedPreferences("tt", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.putString("name", snapshot.value.toString())
+                    editor.apply()
+                }
             }
             override fun onCancelled(error: DatabaseError) {
 
@@ -62,6 +69,7 @@ class UserDetails : AppCompatActivity() {
 
         databaseReference.child("address").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
+
                 if(snapshot.value!=null)
                 binding.tvAddress.text = snapshot.value.toString()
             }
@@ -87,7 +95,7 @@ class UserDetails : AppCompatActivity() {
     fun init()
     {
         auth=FirebaseAuth.getInstance()
-        storageReference=FirebaseStorage.getInstance().getReference("images/").child("${auth.currentUser?.uid.toString()}")
+        storageReference=FirebaseStorage.getInstance().getReference("images/").child(auth.currentUser?.uid.toString())
         databaseReference = FirebaseDatabase.getInstance().reference.child("images").child(auth.currentUser?.uid.toString())
          progressDialog = ProgressDialog(this).apply {
             setMessage("Loading....")
@@ -116,6 +124,10 @@ class UserDetails : AppCompatActivity() {
         binding.ivphoneEdit.setOnClickListener{
             openDialog(3)
         }
+        binding.ivAddress.setOnClickListener{
+            startActivity(Intent(this@UserDetails,menu::class.java))
+        }
+
     }
     private fun openFileChooser() {
         val intent = Intent()

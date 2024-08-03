@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+
+        android:layout_width="match_parent"
+    android:scrollbars="none"
+        android:layout_height="match_parent"
+    android:id="@+id/main">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:scrollbars="none"
+         android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+
+            android:layout_height="wrap_content">
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:id="@+id/layout"
+
+              android:padding="1dp"
+              android:background="@color/black"
+
+              >
+                 <View
+                  android:layout_width="50dp"
+                  android:layout_marginStart="1dp"
+                  android:layout_height="0dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/sulu"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                 />
+
+
+              <TextView
+                  android:id="@+id/menu"
+                  android:text="MENU"
+                  android:textStyle="bold"
+                  android:textSize="25sp"
+
+                  android:layout_width="120dp"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintEnd_toStartOf="@id/monday"
+
+                  />
+              <TextView
+                  android:text="Monday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/monday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/menu"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+              <TextView
+                  android:text="Tuesday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/tuesday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/monday"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+              <TextView
+                  android:text="Wednesday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/wednesday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/tuesday"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+              <TextView
+                  android:text="Thursday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/thursday"
+                  android:layout_width="160dp"
+                  android:gravity="center"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/wednesday"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+              <TextView
+                  android:text="Friday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:gravity="center"
+                  android:id="@+id/friday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/thursday"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+              <TextView
+                  android:text="Saturday"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:gravity="center"
+                  android:id="@+id/saturday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  app:layout_constraintStart_toEndOf="@id/friday"
+                  app:layout_constraintTop_toTopOf="parent"
+
+                  />
+
+              <TextView
+                  android:id="@+id/sunday"
+                  android:layout_width="160dp"
+                  android:layout_height="60dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  android:gravity="center"
+                  android:text="Sunday"
+                  android:textSize="20sp"
+                  android:textStyle="bold"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/saturday"
+
+                  app:layout_constraintTop_toTopOf="parent" />
+
+              <TextView
+                  android:text="Breakfast"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/breakfast"
+                  android:layout_width="120dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  android:gravity="center"
+app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/menu"
+                   />
+              <TextView
+                  android:id="@+id/mobe"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/breakfast"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+              <TextView
+                  android:id="@+id/tube"
+                  android:layout_width="160dp"
+                  android:gravity="center"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/mobe"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+              <TextView
+                  android:id="@+id/webe"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/tube"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+              <TextView
+                  android:id="@+id/thbe"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/webe"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+              <TextView
+                  android:id="@+id/frbe"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/thbe"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+              <TextView
+                  android:id="@+id/sabe"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/frbe"
+                  app:layout_constraintTop_toBottomOf="@id/monday"
+
+                  />
+
+              <TextView
+                  android:id="@+id/sube"
+                  android:layout_width="160dp"
+                  android:layout_height="200dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  android:gravity="center"
+                  app:layout_constraintEnd_toEndOf="parent"
+
+                  app:layout_constraintStart_toEndOf="@id/sabe"
+
+                  app:layout_constraintTop_toBottomOf="@id/monday" />
+
+              <TextView
+                  android:text="Lunch"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/lunch"
+                  android:layout_width="120dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  android:gravity="center"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/breakfast"
+                  />
+              <TextView
+                  android:id="@+id/molu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/breakfast"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+              <TextView
+                  android:id="@+id/tulu"
+                  android:layout_width="160dp"
+                  android:gravity="center"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/molu"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+              <TextView
+                  android:id="@+id/welu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/tulu"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+              <TextView
+                  android:id="@+id/thlu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/welu"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+              <TextView
+                  android:id="@+id/frlu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/thlu"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+              <TextView
+                  android:id="@+id/salu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/frlu"
+                  app:layout_constraintTop_toBottomOf="@id/mobe"
+
+                  />
+
+              <TextView
+                  android:id="@+id/sulu"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  android:gravity="center"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/salu"
+
+                  app:layout_constraintTop_toBottomOf="@id/mobe" />
+
+
+              <TextView
+                  android:text="Snacks"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/snacks"
+                  android:layout_width="120dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  android:gravity="center"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/lunch"
+                  />
+              <TextView
+                  android:id="@+id/mosn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/breakfast"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+              <TextView
+                  android:id="@+id/tusn"
+                  android:layout_width="160dp"
+                  android:gravity="center"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/mosn"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+              <TextView
+                  android:id="@+id/wesn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/tusn"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+              <TextView
+                  android:id="@+id/thsn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/wesn"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+              <TextView
+                  android:id="@+id/frsn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/thsn"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+              <TextView
+                  android:id="@+id/sasn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/frsn"
+                  app:layout_constraintTop_toBottomOf="@id/molu"
+
+                  />
+
+              <TextView
+                  android:id="@+id/susn"
+                  android:layout_width="160dp"
+                  android:layout_height="110dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  android:gravity="center"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/sasn"
+
+                  app:layout_constraintTop_toBottomOf="@id/molu" />
+
+
+
+              <TextView
+                  android:text="Dinner"
+                  android:textStyle="bold"
+                  android:textSize="20sp"
+                  android:id="@+id/dinner"
+                  android:layout_width="120dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/menu"
+                  android:gravity="center"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/snacks"
+                  />
+              <TextView
+                  android:id="@+id/modi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/breakfast"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+              <TextView
+                  android:id="@+id/tudi"
+                  android:layout_width="160dp"
+                  android:gravity="center"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/modi"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+              <TextView
+                  android:id="@+id/wedi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/tudi"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+              <TextView
+                  android:id="@+id/thdi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:gravity="center"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/wedi"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+              <TextView
+                  android:id="@+id/frdi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/thdi"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+              <TextView
+                  android:id="@+id/sadi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:gravity="center"
+                  android:background="@color/white"
+                  app:layout_constraintStart_toEndOf="@id/frdi"
+                  app:layout_constraintTop_toBottomOf="@id/mosn"
+
+                  />
+
+              <TextView
+                  android:id="@+id/sudi"
+                  android:layout_width="160dp"
+                  android:layout_height="160dp"
+                  android:layout_margin="1dp"
+                  android:background="@color/white"
+                  android:gravity="center"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toEndOf="@id/sadi"
+
+                  app:layout_constraintTop_toBottomOf="@id/mosn" />
+              <View
+                  android:layout_width="0dp"
+                  android:layout_height="50dp"
+                  android:background="@color/menu"
+                  android:layout_margin="1dp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/dinner"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                <com.google.android.material.textview.MaterialTextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:text="**Salad to be present 7 davs durinq lunch and dinner;.Achaar/Lemon can be taken whenever needed bv askinq the mess workers."/>-->
+
+<!--                <View-->
+<!--                    android:layout_width="800dp"-->
+<!--                    android:layout_height="2dp"-->
+<!--                    android:background="@color/black"/>-->
+<!--            </LinearLayout>-->
+        </HorizontalScrollView>
+    </ScrollView>
+
+
+
+

@@ -1,7 +1,6 @@
 package com.theayushyadav11.loginandsignup
 
 import android.app.Activity
-import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.theayushyadav11.loginandsignup.databinding.ActivitySignInBinding
+
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
@@ -32,7 +32,9 @@ class SignInActivity : AppCompatActivity() {
         binding.cvGoogle.setOnClickListener {
             signInWithGoogle()
         }
-
+        binding.tvForgotPassword.setOnClickListener{
+            forgotPassword()
+        }
 
         binding.btnLogin.setOnClickListener {
             val  progressDialog = ProgressDialog(this).apply {
@@ -69,6 +71,31 @@ class SignInActivity : AppCompatActivity() {
     {
         Toast.makeText(this, "$s", Toast.LENGTH_SHORT).show()
     }
+
+
+    fun forgotPassword()
+    {
+        binding.tvForgotPassword.setOnClickListener {
+            val email = binding.etEmail.toString().trim()
+            if (email.isEmpty()) {
+                binding.etEmail.error = "Email is required"
+                binding.etEmail.requestFocus()
+                return@setOnClickListener
+            }
+
+            firebaseAuth.sendPasswordResetEmail("theayushyadav11@gmail.com")
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Password reset email sent", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(this, task.exception?.message.toString(), Toast.LENGTH_LONG).show()
+                    }
+                }
+        }
+    }
+
+
+
 
 //****************************************************************************************************************************************************************************************************
     //Copy from here

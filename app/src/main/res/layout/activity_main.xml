@@ -14,26 +14,28 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:backgroundTint="#2196F3"
+        android:drawableStart="@drawable/baseline_person_outline_24"
         android:text="Details"
         app:cornerRadius="10dp"
+        app:icon="@drawable/baseline_person_outline_24"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
-
-    <TextView
-        android:layout_marginTop="40dp"
-        android:id="@+id/tvHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login to  your account"
-        android:textSize="25sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <TextView
+        android:id="@+id/tvHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
+        android:layout_marginEnd="4dp"
+        android:text="Hi,Ayush Yadav"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnDetails"
+        app:layout_constraintEnd_toStartOf="@+id/btnDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnDetails" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
@@ -57,6 +59,8 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#2196F3"
         android:text="Add"
+        app:icon="@drawable/baseline_add_24"
+        app:iconSize="30dp"
         android:layout_margin="25dp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,22 +71,24 @@
         android:layout_height="0dp"
         android:layout_margin="25dp"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd">
+
         <LinearLayout
             android:id="@+id/adder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            android:orientation="vertical">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
 
         </LinearLayout>
